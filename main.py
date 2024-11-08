@@ -27,7 +27,6 @@ def main():
     while r.window_should_close() == False:
         ##################################################################
         # UPDATE GAME
-        delta = r.get_fps()
         ball.update()
         # Print the ball's current position on console for debug
         print(f"({ball.x}, {ball.y})")
