@@ -2,10 +2,12 @@
 # Import raylibpy and ball
 import raylibpy as r
 import ball
+
 ##################################################################
 # Instantiate the ball
 ball = ball.Ball()
-# Entry point
+
+# Window and variables setup
 def main():
     ##################################################################
     # Window variables
@@ -15,15 +17,17 @@ def main():
     ball.x = screenWidth / 2
     ball.y = screenHeight / 2
     ball.radius = 20
-    ball.speed_x = 15
-    ball.speed_y = 15
+    ball.speed_x = 12
+    ball.speed_y = 12
     ##################################################################
     # Set target FPS to 60
     r.set_target_fps(60)
     # Initialize window
     r.init_window(screenWidth, screenHeight, "BouncyBall")
-    ##################################################################
-    # GAME LOOP
+
+##################################################################
+# GAME LOOP
+def gameLoop():
     while r.window_should_close() == False:
         ##################################################################
         # UPDATE GAME
@@ -41,9 +45,9 @@ def main():
         r.draw_fps(10, 10)
         # End drawing
         r.end_drawing()
-    ##################################################################
     # Close the window
     r.close_window()
-        
+
 if __name__ == '__main__':
     main()
+    gameLoop()
